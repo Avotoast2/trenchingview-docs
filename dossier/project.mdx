@@ -1,0 +1,52 @@
+---
+title: "Project"
+description: "What it is and who is behind it: the description, the team line, the official account, promoters, and the info rows."
+---
+
+The Project section answers two questions: **what is this** and **who is behind it**. It is the section where the rules about people matter most, so they are spelled out here.
+
+## The description
+
+The headline and bullets are a model's extraction of what the project says it does — from its site, docs, official account and the read of X — with a confidence chip. It is a description, not a judgement: no adjectives about quality, no price talk, no narrative. Claims the project makes are tagged as such ("says coming soon"). The narrative lives in [Story](/dossier/story); the checkable claims live in [Substance](/dossier/substance).
+
+## Team
+
+The team line lists **only accounts that claim the project in their own words**. An account joins with one of:
+
+- a **bio claim** in the present tense — `building @x`, `founder / CEO / CTO / dev / core @ x`, `x team`;
+- a **post claim** — its recent posts talk about the project as its author ("we shipped", "excited to announce @x");
+- **hard evidence** — a GitHub contributor of the linked repo, or named as the dev by two or more third parties.
+
+Being quoted, reposted or followed by the official account, or named by a model, is never enough on its own. Those signals only decide whose bio and posts get read. The full rule, and why, is in [Who is behind it](/concepts/who-is-behind-it).
+
+Each chip carries what the bio said: the **role** (`builder`, `co-founder`, `dev`), a **previous employer** if the bio names one (`prev. @PolynomialFi` — never counted as team), the account's **age on X** and its **self-declared location**. The deployer address closes the row. For a meme the label reads **creator**; for a protocol, **team**.
+
+When the X provider was down, accounts a model named as behind the project appear marked **named on X · unverified** rather than vanishing. A Fresh run once the provider is back replaces them with verified chips.
+
+## Official X
+
+The project's own account, with follower count, age, location, and notes from X history when there are any: renamed from another handle, the same account recycled from another token, a handle previously used by a different account.
+
+Where nothing lists an official account, the dossier infers it from the handles the run met — the one team bios point at ("building @listedexchange" names the project), or one whose name matches the token and whose bio describes it — and marks it **inferred**. An inferred account is a different tier from a listed one and is shown as such. When it cannot decide, the row says *none listed · possibly @a @b*.
+
+The official account is **never** on the team line and never among the promoters.
+
+## Shilled by
+
+Everyone else who pushed it: trusted voices (★ when you follow them), Grok's notable accounts, and accounts the read of X named. Each chip opens **the post where they said it** — the trusted-voice post, a citation from that account, or failing both an X search scoped to that account and this token. Never the profile front page.
+
+Excluded by rule: the official account, the team, anyone a model named as behind the project, and infrastructure accounts (chains, DEXes, tools, alert bots such as whale-watch feeds).
+
+## The info rows
+
+| Row | Source |
+|---|---|
+| **website** | The site: title, whether it is live, whether it lists the contract address |
+| **domain** | Registration age — a domain days old was bought for this launch |
+| **repo** | The linked GitHub repository, or *none linked* |
+| **community** | Telegram / Discord links from the pair or the site |
+| **launch** | Launchpad, method, and when |
+| **launched by** | Who the launch transaction says |
+| **name** | The token's on-chain name |
+| **entity** | A legal entity, when the site states one (absent otherwise) |
+| **claim type** | *meme* or *protocol* — a meme is allowed to be thin; a project that calls itself a protocol is held to it |

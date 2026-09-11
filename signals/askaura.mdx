@@ -1,0 +1,46 @@
+---
+title: "AskAura"
+description: "Ask the corpus — every dossier, story, thesis, call, note, watch event and video the desk has seen — and get an answer with citations, or a ranked list of what matched."
+---
+
+**AskAura** sits on top of the corpus: one document for every thing the desk has seen, embedded for search by meaning and indexed for exact terms (tickers, handles, addresses). It answers questions across all of it.
+
+## Two modes
+
+| Mode | What you get |
+|---|---|
+| **Answer** | A grounded answer with numbered `[n]` citations that hover-preview and open the dossier, source cards, and three follow-up questions. Counts against your daily answers |
+| **Find** | The ranked documents themselves, with a snippet and the token, filterable by kind. Free |
+
+Kinds: dossier, pillar evidence, story, thesis, call, watch event, note, video, tags.
+
+## Where it lives
+
+- The **✦ AskAura** button at the bottom right of the radar and dossier pages slides a drawer in from the right; ⇱ opens it as the full page; `Esc` closes.
+- **/ask** is the full page with the history rail: your past queries grouped by day, searchable, re-openable free (every result is stored), `×` deletes.
+- The **Videos** block, the **Corpus** box and the notes on a dossier all write into the same corpus, so a question asked a month later finds what you wrote today.
+
+## Good questions
+
+- "Which Robinhood-chain tokens had a same-block bundle this week?"
+- "What did the trusted voices say about $SHROOM?"
+- "Who flipped bearish on tokenized stocks?"
+- "Tokens where the official account was renamed"
+
+## Notes and tags
+
+**Add a note** on a dossier writes a `note` document: one line, yours, searchable, shown on the card. Saving a note also re-tags the token — a small model pass assigns category and mechanics tags (meme, DeFi/yield, stock-token, buyback flywheel…) that show in the editor and drive Find filters.
+
+## From Claude (MCP)
+
+The same corpus is available to Claude Desktop and Claude Code through a small MCP server, so you can ask about tokens from your own assistant:
+
+| Tool | Does |
+|---|---|
+| `corpus_find` / `corpus_answer` | Find and Answer, as above |
+| `dossier_get` | The latest saved dossier with story, notes, tags, history |
+| `run_dossier` | Run a fresh dossier (20–120 s) and return it |
+| `add_note` | Your annotation |
+| `recent_dossiers` / `looked_at` / `corpus_stats` | What the desk looked at, and how big the corpus is |
+
+Set an API token from your [account page](/getting-started/account) as `TRENCH_TOKEN`; the token acts as you, with your plan's limits.

@@ -1,0 +1,39 @@
+---
+title: "Stock-token radar"
+description: "The tokenized-equity ecosystem on Robinhood chain: the official wrappers, the meme tokens quoted against them, ignition states, and the on-chain premium while the stock market is closed."
+---
+
+Robinhood chain carries **official tokenized equities** — wrappers on real stocks — and, around them, a meme economy of tokens paired against those wrappers. The radar watches both.
+
+## The registry
+
+Every official wrapper, enumerated from the chain's explorer (admin-verified contracts with the official name suffix) and refreshed every six hours. Impostors that mimic the name are kept with an `official = 0` flag so the copycat check can point at them. Everything else on this page joins on this registry.
+
+## Now
+
+The five numbers that matter while the market is closed, for the wrappers with the most attention: on-chain price vs the equity's last print (the **premium**), volume, turnover, and how much of the wrapper's supply sits pooled (**absorption**). A premium of 5% or more while NYSE is closed, or pooled share rising 10 points over six hours, raises an alert.
+
+## Ignition
+
+Each wrapper carries a volume and turnover state machine against its own baseline (the median of its hourly volume two to twenty-six hours back):
+
+| State | Meaning |
+|---|---|
+| **QUIET** | Nothing unusual |
+| **IGNITING** | Hourly volume clearing the baseline multiple, above the floor |
+| **HOT** | Sustained |
+| **COOLING** | Coming off a peak; returns to QUIET |
+
+Alerts are escalation-only: a wrapper tells you once when it ignites, not on every tick.
+
+## Meme legs that cleared the gate
+
+New pools on the chain are discovered from pool-creation logs and enriched from DexScreener. A meme token quoted against a wrapper that clears the liquidity and volume gate gets an automatic dossier and appears here, newest first, with its verdict. This is the intake side of the radar: it feeds the same dossier as a pasted address would.
+
+## Research
+
+The study rules — does on-chain lead the stock? — run on paper against recorded fills and are shown here as they accumulate. No claim is made until the sample supports it.
+
+## Watchlist and recent dossiers
+
+The tokens you watch, with their re-check cadence and the last change; and the desk's recent dossiers, newest first. Both open the dossier on click.

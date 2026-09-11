@@ -1,0 +1,51 @@
+---
+title: "Who is behind it"
+description: "How the team line is built: interactions nominate, claims decide, previous employers are excluded, and the official account is inferred when nothing lists it."
+---
+
+Projects rarely name their team. The site says nothing, the official bio says nothing, and yet the founder is right there — quoted by the official account, followed by it, with "building @project" in their own bio. The team line is built to find that person and **only** that person.
+
+## Interactions nominate, claims decide
+
+Behaviour finds candidates: the official account quotes, reposts, replies to and follows people; third parties write "built by @x"; a model reading X names handles; the followers of a silent official account are ranked by how many notable accounts follow them. All of that decides **whose bio and posts get read**. None of it puts anyone on the team line.
+
+An account joins the team only with **its own claim**:
+
+| Claim | Example |
+|---|---|
+| **Bio, present tense** | `building @listedexchange` · `co-founder @umia_finance` · `dev @insertculthere` · `Making Capital Formation work for Ventures at @umia_finance` |
+| **Posts in the author register** | A meaningful share of recent posts about the project, in the first person: "we shipped", "how we can tweak the LPs", "excited to announce @x" |
+| **Hard evidence** | A GitHub contributor of the linked repo; named as the dev by two or more third parties |
+
+## Reading the bio: relation words decide
+
+The phrase around each mention says what the account *is* to the project:
+
+| Phrase | Read as | Effect |
+|---|---|---|
+| building · founder · co-founder · CEO · CTO · dev · lead · core · team · working on | **team**, with the role word | joins the team line as `builder`, `co-founder`, `dev`… |
+| prev. · previously · ex- · formerly · former · alumni | **previous employer** | never team; shown as chip meta `prev. @PolynomialFi` |
+| investor · backed by · angel · advisor | **backer** | not team |
+| fan of · holding · bullish | **holder** | dropped |
+
+A handle that only appears as *someone else's* previous employer or backer is an organisation mention. It is never even a candidate.
+
+<Note>
+The case that set this rule: a founder whose bio read `building @listedexchange | prev. @PolynomialFi`. The earlier version listed all three handles as team. Now: `@Akhileyyy · builder · prev. @PolynomialFi`, the project's account on its own row, and PolynomialFi nowhere.
+</Note>
+
+## Accounts that only interact
+
+The official quoting, reposting or following someone means the project likes them. It does not make them the team. Those accounts appear as a muted **around it** line in the Social section — the signal is kept, without masquerading as membership.
+
+## The official account
+
+The project's own account comes from the pair listing or the site. When neither names one, it is inferred from the handles the run met: the account that team bios point at (`building @x` names the project), or a handle or display name matching the token whose bio describes it. An inferred account is marked **inferred** on its row, is used by the downstream checks (X history, notable followers), and is never placed on the team line or among the promoters. A tie with nothing pointing at either stays unresolved: the row reads *none listed · possibly @a @b*.
+
+## Promoters
+
+Everyone else who pushed the token — trusted voices, notable accounts from the read of X — with a link to the post where they said it. The official account, the team, anyone a model named as behind the project, and infrastructure accounts (chains, DEXes, tools, whale-alert bots) are excluded by rule.
+
+## When X is down
+
+If the X provider is unavailable, the team check cannot run. The line then shows the accounts a model named as behind the project, marked **named on X · unverified**, rather than nothing — and the dossier carries a PARTIAL banner. A Fresh run once the provider is back replaces them with verified chips.

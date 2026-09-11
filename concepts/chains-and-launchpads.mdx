@@ -1,0 +1,37 @@
+---
+title: "Chains and launchpads"
+description: "Which chains are covered and how, which launchpads the chip recognises, and how StonkFun tokens are told apart from plain Raydium pools."
+---
+
+## Chains
+
+| Chain | Safety backend | Notes |
+|---|---|---|
+| **Robinhood chain** | Own explorer / RPC module | The frontier chain: launch-tx decode, deployer funding graph, holder scan. Trades route through account-abstraction bundlers, so holdings are attributed to the smart account, never the bundler |
+| **Solana** | RugCheck + Helius | Freeze, mint and transfer-fee authorities, mutable metadata, insiders by transfer graph; launch-window bundles, snipers, rotation and funding clusters from parsed transfers |
+| **Ethereum**, **Base**, **BSC**, **Arbitrum** | GoPlus + Honeypot.is + Blockscout | The covered chains: simulator-backed sellability and tax reads |
+
+Tickers resolve through DexScreener on every chain; an ambiguous ticker shows candidates rather than guessing. Per-chain explorer links, address formats and launchpad templates come from the chain configuration.
+
+## Launchpads
+
+The header chip names where the token launched, with the pad's icon, and links to it. Recognition works from three sources, in order:
+
+1. **The verified contract template** — a Pons launcher contract on Robinhood chain is Pons.
+2. **The decoded launch method** — `launchAndBuy` is a launchpad; a plain deploy is *direct deploy*.
+3. **The DEX the pair trades on** — pump.fun and pumpswap pairs are pump.fun; Bonk, Bags, Moonshot, Boop on Solana; Zora, Clanker, Virtuals on Base.
+
+| Pad | Chain |
+|---|---|
+| Pons | Robinhood |
+| StonkFun | Solana |
+| pump.fun | Solana |
+| Bonk (letsbonk) | Solana |
+| Bags · Moonshot · Boop | Solana |
+| Zora · Clanker · Virtuals | Base |
+
+### StonkFun
+
+StonkFun tokens graduate to plain Raydium and Meteora pools, so the DEX alone reads *raydium* — and its bonding-curve tokens are not indexed by DexScreener at all. The dossier therefore asks the desk's StonkFun tracker first for every Solana mint: a token in its universe gets the chip `StonkFun · LaunchLab · reward` (sub-pad and launch mode) regardless of where it trades now. The answer is saved with the dossier so permalinks keep it.
+
+A token launched somewhere the chip does not recognise shows no chip rather than a guess. Send an example and the pad is added.

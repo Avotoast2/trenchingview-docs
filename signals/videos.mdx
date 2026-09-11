@@ -1,0 +1,39 @@
+---
+title: "Videos"
+description: "Crypto YouTube channels and livestreams read into timestamped highlights, theses, stated trades and the tokens they are about — and folded into the dossier."
+---
+
+**Videos** watches a set of crypto YouTube channels — videos and livestreams — and reads each one into structured facts: what was said, about which tokens, and what the speakers actually traded. The alpha in these channels is spoken, not written; this section makes it searchable and links it to the dossier.
+
+## How a video is read
+
+<Steps>
+  <Step title="Discovery">
+    Each channel's uploads and past livestreams are polled every 30 minutes. A stream that is live or scheduled is skipped and picked up once it ends.
+  </Step>
+  <Step title="Understanding">
+    A video model reads the video itself in 45-minute segments and returns 10–25 **timestamped highlights** — specific claims with the numbers and names referenced — plus the tokens discussed (with the chain, and the contract when it was shown on screen) and the trades the speakers described.
+  </Step>
+  <Step title="Structuring">
+    A second pass turns that into **claims**, **theses** (token, stance, catalysts, risks, timestamp) and **trades** (token, side, size, entry, target, stop, horizon, conviction, the verbatim quote).
+  </Step>
+  <Step title="Resolution">
+    Every token goes through the same resolver the dossier uses, to a chain and a contract. A bare word with no cashtag and no chain hint is never matched — "buy some DRAM" means memory stocks, not a memecoin named DRAM. Majors and companies are excluded. An ambiguous name stays unresolved with its candidates shown.
+  </Step>
+</Steps>
+
+## What counts as a trade
+
+A trade is what a speaker says they **did or are doing with their own money, this cycle**: bought, sold, adding, trimming, shorting, taking profit. Hypotheticals, audience advice and anecdotes from past years are not trades. A stated buy, add or short on a resolved token becomes a **tracked call** on the desk — the same path as an X post — with a dossier and outcome snapshots.
+
+## The list
+
+Newest first: thumbnail, title, channel, stream or video, duration, age, then the tokens mentioned as chips (resolved ones link to the dossier; traded ones are highlighted), the counts of trades, theses and claims, and **views now** with the change over the last 24 hours. Views are re-read at +1h, +6h, +24h, +3d and +7d. Filter by channel, trades only, or any text.
+
+## The video page
+
+The embedded player with the trades, theses, tokens and highlights beneath it; every timestamp seeks the player. Tokens show the liquidity and market cap they resolved to, or their candidates when they did not.
+
+## On the dossier
+
+A token's video mentions appear in the **Social** section as a Videos block: channel, what was said, the stance, and a link that opens the video at that moment.

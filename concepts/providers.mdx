@@ -1,0 +1,37 @@
+---
+title: "Providers and PARTIAL"
+description: "What each part of a dossier is read from, what is a model and what is a measurement, and what happens when a provider is down."
+---
+
+Every line on a dossier comes from somewhere specific. This page is the map.
+
+## What reads what
+
+| Leg | Provider | Kind |
+|---|---|---|
+| Pair, price, liquidity, volume, socials | DexScreener | public API |
+| Contract safety on covered chains | GoPlus, Honeypot.is, Blockscout | public APIs |
+| Contract safety, holders, insiders on Solana | RugCheck | public API |
+| Launch-window flow on Solana | Helius parsed transfers | API key |
+| Deployer forensics, holders, launch tx on Robinhood chain | Own explorer / RPC module | direct |
+| Equity prints for the stock-token premium | Polygon (15-minute delayed) | API key |
+| Official account, team, trusted voices, X history, notable followers | twitterapi.io | pay-per-use |
+| The read of X (chatter, flags, who is behind it) | Grok with X search | model, cited |
+| Project description, claim type, substance | Claude Haiku over what was gathered | model, extracts only |
+| Story | Grok with X search | model, cited |
+| Corpus search and AskAura answers | OpenAI embeddings + Claude Haiku | model, cited |
+| Videos | Gemini over the video, Claude Haiku | models, cited by timestamp |
+
+## Models extract; they never grade
+
+Where a model is involved it is asked to extract, describe and cite. The description has no adjectives about quality; the read of X drops any flag without a post URL; the story keeps its footnotes; the substance section shows facts with a three-state answer (yes / no / unknown) instead of a score. Numbers appear only when measured. Evaluative words a model slips in are filtered before display.
+
+## Provider down is not evidence
+
+When a provider fails — X credits exhausted, a 402 or 403, an explorer rate-limiting — the checks that depend on it emit **UNKNOWN with the reason**, never "does not exist", "no team" or "no chatter". The dossier carries a **PARTIAL** banner listing the unavailable providers, and the same note travels to the Telegram card and the CLI. Once the provider recovers (the desk re-tests within minutes), a Fresh run fills the gaps.
+
+A **data quality** line at the bottom of Findings lists public hosts that were rate-limiting during the run; unknowns above it may be transient.
+
+## Budgets
+
+Free public APIs are metered by a per-host budget shared across all runs, with a circuit breaker per host, so one busy hour cannot exhaust everyone's reads. Paid providers are recorded per call and per run; the cost of a run shows on the card's checks tile.

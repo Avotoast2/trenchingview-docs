@@ -1,0 +1,44 @@
+---
+title: "Account"
+description: "Invites, sign-in, your X trust layer, API tokens for MCP and scripts, exports, and deleting your account."
+---
+
+## Invite and sign-in
+
+TrenchingView is **invite-only** while in active development. Sign in at `/login` (email or the provider buttons), then enter your invite code on the **Invite code** page. Codes look like `TV-XXXXXXXX` and carry the plan you are invited on. No code? Ask the person who pointed you here.
+
+## Onboarding: which X account are you?
+
+Right after activation the desk asks one thing: your X handle. It reads your **public follows** once, and again whenever you refresh them from your account page. From then on, the accounts you follow are marked **★** wherever they appear on a dossier — trusted voices, team, promoters, notable accounts.
+
+<Note>
+This is your trust layer, computed from your own follows. It is never derived from ours, and it is never shared: another user sees their own stars, not yours. You can skip it and add the handle later.
+</Note>
+
+## The account page
+
+`/profile` holds everything that is yours:
+
+| Section | What it does |
+|---|---|
+| **Name / email / plan** | Display name is editable; plan and member-since are shown |
+| **Your X account** | Set or change the handle; **Read my follows** refreshes the ★ layer |
+| **Your data** | Search history and watchlist, each with a **download CSV**; a count of your notes |
+| **Usage** | Credits, today's spend, running dossiers, quick runs this hour, AskAura answers today, watches — and the credit ledger (when, credits, reason, reference) |
+| **API tokens** | Create a token for MCP and scripts; it is shown once |
+| **Session** | Sign out |
+| **Delete account** | Removes your history, watchlist, notes, asked questions, follows and usage rows for good |
+
+## API tokens
+
+A token acts as you. Create one on the account page, copy it when it is shown (it is shown once), and revoke it there any time. Send it as a bearer header:
+
+```
+Authorization: Bearer tv_…
+```
+
+The same token is what the [MCP server](/signals/askaura#from-claude-mcp) uses: set it as `TRENCH_TOKEN`.
+
+## Deleting your account
+
+Delete removes every row that is yours. Dossiers you ran stay in the shared library — they are public on-chain reads, not personal data — but without your name on them. Notes you wrote are removed.

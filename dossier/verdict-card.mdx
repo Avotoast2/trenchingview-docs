@@ -1,0 +1,55 @@
+---
+title: "The verdict card"
+description: "PASS, WATCH or SMALL; the header chips; the tiles; links; the PARTIAL banner; notes, watch, share and report."
+---
+
+## The banner
+
+The first line of every dossier is the verdict and its rule:
+
+| Verdict | Meaning | Rule |
+|---|---|---|
+| **PASS** | Vetoed, or too weak | A critical check failed or could not be read (the banner names it: *Killed by sellability*), or the score is below the WATCH bar |
+| **WATCH** | No veto, score in the middle | No RED on a critical check, score at or above 45 |
+| **SMALL** | No veto, score clears the bar | No RED on a critical check, score at or above 70 |
+
+The ring on the left shows the score and, underneath, the counts that produced it: `9 ok · 4 warn · 1 red · 10 ??`. The number is shown here only as context; the counts are what the verdict rests on. See [Fail-closed](/concepts/fail-closed) for why unknown counts as red.
+
+Under the banner: the timestamp of the read and the disclaimer. Every dossier is an automated read of public data at that moment. Re-run before acting.
+
+## PARTIAL
+
+When a provider was down during the run — X credits exhausted, an explorer rate-limiting, DexScreener throttling — a **PARTIAL** banner lists what was not checked. Those legs read UNKNOWN in Findings; they were not filled in with a guess. Re-run once the provider is back; the banner says which one.
+
+## The header
+
+Two lines. The title line is identity; the chip row is facts.
+
+- **`$SYMBOL / QUOTE`** — the pair as DexScreener shows it. The quote gets a kind chip only when it says something: **stable**, **native**, or **stock token** (an official tokenized equity on Robinhood chain — impostors are flagged). The token's name appears only when it differs from the symbol.
+- **Chain chip**, then the **launchpad chip** — where it launched, with the pad's icon, linking to the pad. Sub-pad and mode follow where known (`StonkFun · LaunchLab · reward`). See [Chains and launchpads](/concepts/chains-and-launchpads). Then the **DEX** it trades on.
+- The **address** with a copy button.
+
+## The tiles
+
+Price, FDV, liquidity, 24h volume, pair age, DEX, and **checks** — how many ran, how long it took, and what the run cost the desk in provider calls (shown for transparency; it is not your credit).
+
+A Quick dossier says so under the tiles: *quick dossier — chain checks only; run Full for the X and Grok legs*.
+
+## Links
+
+Chart (DexScreener), Explorer, Website, Telegram, the official X (marked **OFFICIAL**), team accounts (marked **TEAM** or **NAMED ON X**), then searches: the contract address on X and the `$SYMBOL` cashtag on X, both live-sorted.
+
+## Watch
+
+**★ Watch** starts periodic cheap re-checks and a change-only alert stream. The strip under the links shows when the watch started, how many re-checks ran, the next one, and the events. Details in [Watch](/dossier/watch).
+
+## Notes
+
+A single dashed row: **✎ Add a note**. Click it (or press Enter on it) and it opens into the editor with the input focused; type one line and save. With notes present, the collapsed row shows the count, the latest note and its time; the editor lists them all with the token's tags. `Esc` or `×` collapses it.
+
+Notes are yours, searchable in the corpus, and shown to everyone who opens the token. They also re-tag the token for AskAura.
+
+## Share and report
+
+- **Share** copies the permalink `/dd/<chain>/<address>`. Anyone can open it — no account — and sees the cached dossier with no per-viewer data. Signed-in users are redirected to the live page.
+- **Report a finding** sends the line you disagree with to the desk, with the dossier reference.

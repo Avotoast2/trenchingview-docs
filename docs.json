@@ -1,0 +1,96 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "TrenchingView",
+  "description": "Due diligence for the trenches, in about a minute — a fail-closed dossier for any token, with every line sourced.",
+  "colors": {
+    "primary": "#5c6bc0",
+    "light": "#7c83ff",
+    "dark": "#3949ab"
+  },
+  "background": {
+    "color": {
+      "dark": "#151621"
+    }
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/welcome",
+              "getting-started/quick-tour",
+              "getting-started/account",
+              "getting-started/credits"
+            ]
+          },
+          {
+            "group": "The Dossier",
+            "pages": [
+              "dossier/running",
+              "dossier/verdict-card",
+              "dossier/project",
+              "dossier/substance",
+              "dossier/social",
+              "dossier/story",
+              "dossier/findings",
+              "dossier/liquidity",
+              "dossier/before",
+              "dossier/watch"
+            ]
+          },
+          {
+            "group": "Signals",
+            "pages": [
+              "signals/videos",
+              "signals/stock-token-radar",
+              "signals/askaura"
+            ]
+          },
+          {
+            "group": "Concepts",
+            "pages": [
+              "concepts/fail-closed",
+              "concepts/who-is-behind-it",
+              "concepts/chains-and-launchpads",
+              "concepts/providers"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq/cost",
+              "faq/freshness",
+              "faq/limits",
+              "faq/privacy"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Open TrenchingView",
+        "href": "https://trenchingview.io"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Sign in",
+      "href": "https://trenchingview.io/login"
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://trenchingview.io"
+    }
+  }
+}

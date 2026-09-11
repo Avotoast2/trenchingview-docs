@@ -1,0 +1,36 @@
+---
+title: "Liquidity"
+description: "Where the token trades and how fractured that is: every pool above dust, the top pool's share, the price gap between deep pools, and the quote mix."
+---
+
+The Liquidity section is the map of where the token can actually be bought and sold. It reads the raw pair list the resolver already fetched — no extra network — and shows every pool above a dust floor.
+
+## The read line
+
+One line with the state and the numbers behind it: how many pools, total liquidity across them, and the state word:
+
+| State | Meaning |
+|---|---|
+| **concentrated** | One pool holds most of the liquidity — the normal healthy shape |
+| **fractured** | The top pool holds less than 60% of the total — exits are split across venues |
+| **thin** | Total liquidity across every pool under $5,000 — an exit trap, RED |
+
+A price gap above 2% between deep pools (each above $5,000) is flagged YELLOW: the venues disagree on what the token is worth.
+
+## The pools table
+
+| Column | Meaning |
+|---|---|
+| **pool** | DEX and pool type (Uniswap v4, Raydium CPMM, Meteora DLMM…) |
+| **pair** | Base / quote |
+| **liquidity** | USD in the pool |
+| **share** | The pool's share of total liquidity, as a bar |
+| **vol 24h** / **txns 24h** | Activity |
+| **price** | The pool's own price |
+| **age** | Pool age |
+
+Pools under $1,000 are counted as dust — listed, not judged. DexScreener caps the per-token list at 30 pairs; a capped map says so with `+`.
+
+## Quote mix
+
+What the token is paired against, in shares of liquidity: **stable**, **native** (ETH, SOL, BNB), **stock token** (an official tokenized equity on Robinhood chain), or another token. The quote kind also appears as a chip in the header: a pool quoted in a stock token means the token's price moves with the equity.

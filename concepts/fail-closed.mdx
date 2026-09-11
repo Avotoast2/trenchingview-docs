@@ -1,0 +1,28 @@
+---
+title: "Fail-closed"
+description: "Why one veto is enough, why unknown is treated as red, and how the score only matters once nothing has vetoed."
+---
+
+Most token screens are additive: they sum points and let a strong social score paper over a contract that cannot be sold. TrenchingView is the opposite. It is built around the checks that **end a trade**, and it refuses to be optimistic about anything it could not read.
+
+## The rule
+
+1. A set of checks is **critical**: sellability, taxes, transfer fees, verified source, RugCheck's risk rows, an explorer scam flag, a serial launcher, a pulled or migrated pool.
+2. A critical check that is **RED** vetoes: the verdict is **PASS**, and the banner names the check.
+3. A critical check that is **UNKNOWN** — the explorer was down, the simulator does not cover the chain, the source is unverified so the trap cannot be read — is treated as RED. It vetoes too.
+4. Only with **zero vetoes** does the score decide: 70 and above is **SMALL**, 45 and above is **WATCH**, below is PASS.
+
+## Why unknown is red
+
+An unknown on a critical check is exactly the shape a trap takes: unverified source, a chain the simulators skip, an owner function nobody can read. Treating it as fine would mean the site is most confident precisely where it knows least. Treating it as red means a token has to be *readable* to be anything other than a no — which is the bar a professional would apply anyway.
+
+## Where the score comes from
+
+Six pillars, weighted 25 / 20 / 20 / 15 / 10 / 10 (safety, deployer, distribution, flow, social, project). RED and YELLOW findings cost points inside their pillar; INFO findings are unscored. The number is shown on the card only as context — the counts (`9 ok · 4 warn · 1 red · 10 ??`) are what you should read, and the Findings section is where each one is argued.
+
+## What it means for you
+
+- A **PASS** is the normal outcome and the useful one. It is not an insult to the token; it is the site declining to say yes without the evidence.
+- A **WATCH** says nothing vetoed and the picture is mixed. Read Findings.
+- A **SMALL** says nothing vetoed and the picture is clean on what could be read. It is a size word, not a buy signal.
+- A **PARTIAL** banner over any of them means a provider was down and part of the picture is missing. Re-run.

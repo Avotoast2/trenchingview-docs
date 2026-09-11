@@ -1,0 +1,58 @@
+---
+title: "Running a dossier"
+description: "What you can paste, how ambiguity is handled, the three modes, the cache, stopping a run, and the recent list."
+---
+
+## What you can paste
+
+| Input | What happens |
+|---|---|
+| EVM address `0x…` | Resolved on DexScreener; the chain comes from the pair. Add a chain if you want to force it |
+| Solana mint (base58) | Detected automatically; resolves on Solana |
+| Ticker `BONK` or `$MEME` | Searched by symbol; one liquid match runs, several show **Which one?** |
+| Ticker + chain `BONK sol` | The chain after the ticker narrows the search |
+| A forwarded message | The first contract address in the text is picked out |
+
+<Warning>
+A pasted address sometimes carries a trailing word or character from the message. If the run says DexScreener has no pair, check the address first — the token may also not be listed yet.
+</Warning>
+
+## Which one?
+
+The rule is that **an ambiguous ticker never silently resolves**. When several tokens share a symbol, you get up to three candidates ranked by liquidity — symbol, chain, liquidity, the start of the address — and click the one you mean. A single dominant match (more than 10× the liquidity of the runner-up) runs straight away.
+
+## The three modes
+
+<CardGroup cols={3}>
+  <Card title="Quick" icon="bolt">
+    Chain only: contract safety, deployer, holders, launch-window flow, liquidity map, RugCheck on Solana. No X, no Grok, no description. Free.
+  </Card>
+  <Card title="Full" icon="layer-group">
+    Everything. The expensive legs — the X sweep, team, X history, the Grok read, the description and substance pass — are reused from the shared cache when recent.
+  </Card>
+  <Card title="Fresh" icon="rotate">
+    Everything, cache bypassed. For when something changed since the last run: a rename, a new team account, a fresh wave of chatter.
+  </Card>
+</CardGroup>
+
+**Chain data is always live** in all three modes. Only the social and narrative legs are cached, and only inside these windows:
+
+| Leg | Reused for |
+|---|---|
+| Social sweep, Grok read, team, X history, X prior coins | 6 hours |
+| Project description, claim type, substance | 24 hours |
+| Story | 24 hours |
+
+A Full run whose two expensive legs both came from the cache costs nothing — the cache is the margin, and it is passed on.
+
+## While it runs
+
+The progress card lists every stage with its status and timing: resolve, safety, deployer, holders, flow, project, X trust, team, X history, Grok read, description, substance. A stage that takes long is usually an explorer being slow; the card shows which.
+
+**Stop** (the button, or `Esc`) is cooperative: the stage in flight finishes, nothing after it runs, nothing is saved, nothing is charged.
+
+## The recent list
+
+Under the search box, **Recent** shows your last runs: token logo, symbol and name, the number of runs, chain, verdict chip, score, age. Typing filters it; `↑` `↓` `Enter` navigate; `×` removes a row. Unresolved queries (ambiguous, no match, stopped) stay as typed so you can retry.
+
+The **Recent dossiers** table below the card is the desk's shared library — everyone's runs, newest first. Clicking a row re-runs the token in the currently selected mode.

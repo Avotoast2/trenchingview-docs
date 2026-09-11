@@ -1,0 +1,39 @@
+---
+title: "Watch"
+description: "Re-check a token cheaply on a schedule and get told only when something changed: liquidity, locks, concentration, the deployer's wallet, insiders moving."
+---
+
+**★ Watch** on the verdict card starts a schedule of cheap re-checks — the chain-side legs only, no X, no Grok, so a watch never costs a credit — and an alert stream that fires **only on change**.
+
+## Schedule
+
+| Age of the watch | Cadence |
+|---|---|
+| First 24 hours | Every hour |
+| After that | Every 6 hours |
+| After 30 days | The watch expires; watch again to extend |
+
+Your plan sets how many tokens you can watch at once (see [Plans and credits](/getting-started/credits)).
+
+## What a re-check compares
+
+Each re-check runs the phase-one checks — safety, holders, liquidity, DEX paid status, RugCheck on Solana — and diffs them against the last full dossier or the last re-check. It also follows the **people of interest** from the full dossier: the deployer and the whitelist, rotation and bundle wallets, re-reading their balances, nonces, contract creations and transfer destinations.
+
+## Events
+
+Only deltas become events, and the same event is not re-alerted within 24 hours:
+
+| Event | Severity |
+|---|---|
+| Liquidity down 40% or more vs baseline · liquidity gone · pair gone | RED |
+| Supply leaving a lock or vesting contract | RED |
+| Dev sold out · insiders unloading · insider tokens to other wallets · tokens to an exchange | RED / YELLOW |
+| Top-10 free-float share up 10 points or more · concentration rise | YELLOW |
+| Dev selling · deployer wallet active · deployer launched another contract · deployer accumulating | YELLOW |
+| Community takeover order on DexScreener | YELLOW |
+| A finding improved | INFO |
+| A price move of 50% or more | INFO — noted, never an alert on its own |
+
+## Where alerts go
+
+The events appear in the **watching** strip on the verdict card (when it started, re-checks run, last and next, the event list) and in the **Watchlist** table on the radar page. If you have subscribed to the Telegram bot's alerts, they are pushed there too.

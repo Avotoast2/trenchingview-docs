@@ -1,0 +1,53 @@
+---
+title: "Quick tour"
+description: "Five minutes from a pasted address to a defensible verdict — and where to look when the verdict is not the whole story."
+---
+
+## 0. Sign in
+
+TrenchingView is invite-only while in active development. Redeem your invite code, tell it which X account you are (optional — that is your ★ trust layer), and you land on **Due diligence**. Details in [Account](/getting-started/account).
+
+## 1. Paste
+
+Paste a contract address (EVM `0x…` or a Solana mint), a ticker, or a whole forwarded message — the address is picked out. To force a chain for a ticker, add it after the name: `BONK sol`. If a ticker matches several tokens, you get a **Which one?** list ranked by liquidity; nothing is picked for you.
+
+## 2. Pick a mode
+
+| Mode | Reads | Time | Cost |
+|---|---|---|---|
+| **Quick** | chain only: contract, deployer, holders, launch flow, liquidity | 15–30 s | free |
+| **Full** (default) | everything, with recent social and description legs reused from the shared cache | 30–120 s | 1 credit (0 when served from cache) |
+| **Fresh** | everything, cache bypassed | 30–120 s | 1 credit |
+
+`Enter` runs. `Esc` stops a run in flight — the stage in progress finishes, nothing after it runs, nothing is saved.
+
+## 3. Read the card
+
+The verdict banner comes first: **PASS** (vetoed — the banner names what killed it), **WATCH** or **SMALL**. Under it, the header: symbol and quote asset, chain, launchpad, DEX, the address with a copy button, and the tiles (price, FDV, liquidity, 24h volume, pair age, checks and cost).
+
+<Tip>
+A PASS on a token you like is the most useful thing the site produces. The banner tells you which check vetoed; the [Findings](/dossier/findings) section shows the evidence behind it.
+</Tip>
+
+## 4. Walk the sections
+
+The rail under the header jumps to each section:
+
+- **Project** — what it is and who is behind it. The team line lists only accounts that claim the project in their own words. See [Project](/dossier/project).
+- **Substance** — what exists, which claims could be checked, the dated footprint, and what was not found.
+- **Social** — the official account, the read of X, trusted voices, notable followers, promoters.
+- **Story** — the crowd narrative with citations, kept apart from the facts.
+- **Findings** — every check, worst first, by pillar.
+- **Liquidity** — where it trades and how fractured that is.
+- **Before** — earlier dossiers on the same token and how the price behaved after first sight.
+
+## 5. Act on it
+
+- **★ Watch** re-checks the cheap chain legs hourly for a day, then every six hours, and alerts you only when something changed. See [Watch](/dossier/watch).
+- **Add a note** — one line, searchable in the corpus, shown on the card for everyone.
+- **Share** — the permalink `/dd/<chain>/<address>` shows the cached dossier to anyone, no account needed.
+- **Report a finding** — tell us when a line is wrong; it lands with the desk.
+
+## 6. Ask
+
+**AskAura** (the ✦ button, or the nav tab) sits on top of everything the desk has seen: dossiers, stories, theses, calls, notes, videos. "Which Robinhood-chain tokens had a bundle this week?" is one query. See [AskAura](/signals/askaura).

@@ -1,0 +1,56 @@
+---
+title: "Substance"
+description: "What exists, which claims could be checked against the chain or a document, the dated footprint, consistency, and what was not found."
+---
+
+Substance is facts with provenance. It has no score and no label. It answers: is there anything real behind this token, and can its claims be checked?
+
+## Exists
+
+A fact table, one row per thing a real project would have:
+
+| Row | What is recorded |
+|---|---|
+| **site** | URL, live or not, word count, the builder it was made with when detectable (Lovable, v0, Bolt, Framer…), domain age, whether it lists the CA |
+| **app** | A linked application and whether it responds |
+| **docs** | Documentation links |
+| **repo** | The repository: code files, size, commits, authors, span, tests, CI, last push |
+| **contracts** | See Safety |
+| **audits** | Links to audit reports, or *none found* — never a tick mark |
+| **official X** | The account: since when, how many posts, whether it posts the CA. When the X provider was down: *not checked* |
+| **community** | Telegram / Discord |
+
+Absent is one word. Nothing is padded.
+
+## Claims
+
+The description's mechanics are matched against evidence, family by family: LP locked or burned, ownership renounced, supply locked, a treasury or vault among the top holders, a burn address, liquidity, stock-token quoting, an audit, fees, governance docs, a live app.
+
+Only claims that **could be checked** are shown, with their state:
+
+| State | Meaning |
+|---|---|
+| **contradicted** | The chain or the document says otherwise — shown first, with a yellow dot on the block |
+| **on-chain** | Confirmed by an on-chain read |
+| **documented** | A document exists and is linked |
+| **live** | The linked app responds |
+
+Claims that are only the project's own words are not restated; a single muted line counts them (*3 more claims are the project's own words only — nothing to check them against*). When nothing is checkable the block does not appear, and the **Not found** line says so.
+
+## Footprint
+
+Every dated public trace, oldest first: domain registered, official account created, repo created, pair created, contract deployed. Presented as a timeline with days-ago. When everything public about a project is a few days old, the footprint line says exactly that; it draws no conclusion from it.
+
+## Consistency
+
+Seven yes / no / unknown checks, shown as chips:
+
+- site lists the CA · site mentions the symbol · official X posts the CA
+- docs or app linked · named human or team account
+- X agrees on who is behind it · accounts you follow talk about it
+
+Unknown stays unknown. It is never rounded to no.
+
+## Not found
+
+One line listing what a substantive project would have and this one does not: an audit, a named team, a legal entity, checkable claims, a repo. It is the honest inverse of the Exists table.

@@ -1,0 +1,60 @@
+---
+title: "Findings"
+description: "Every check the dossier ran, worst first, grouped by pillar: what each pillar covers, the four statuses, and the pattern compendium behind them."
+---
+
+The Findings grid is the evidence under the verdict. Every check returns a **status** and an **evidence** line — a sentence with the numbers and addresses it read, never an adjective. Clean checks fold away when there is something worse to see; open them to read what passed.
+
+## Statuses
+
+| Status | Meaning | Effect |
+|---|---|---|
+| **RED** | The check failed | On a critical check: veto → PASS. Otherwise it costs score |
+| **YELLOW** | Worth knowing; not a failure | Costs score |
+| **OK** | Passed | |
+| **UNKNOWN** | Could not be read | On a critical check: treated as RED → veto |
+| **INFO** | A fact with no judgement | Unscored |
+
+Critical checks are the ones a rug turns on: sellability, taxes, transfer fees, verified source, RugCheck's risks, an explorer scam flag, a serial launcher, a pulled pool. See [Fail-closed](/concepts/fail-closed).
+
+## Pillars
+
+Six pillars carry the score (weights out of 100). Social and Project findings render in their own sections rather than the grid.
+
+| Pillar | Weight | Covers |
+|---|---|---|
+| **safety** | 25 | Honeypot / sellability, taxes, mint · pause · blacklist · proxy · hidden owner, verified source, LP lock, explorer flags, bytecode signatures, Solana freeze / mint / transfer-fee / mutable-metadata authorities |
+| **deployer** | 20 | Wallet freshness, funding trail (bridges and solvers), serial launches, dev holding, launch-tx whitelists, pre-computed exemptions, one operator funding many launch buyers |
+| **distribution** | 20 | Top-10 and single-wallet share on the **free float** (bonds, staking pools and LPs classified out), smart-account and bundler wallets unwrapped, fresh-wallet holders, holder clusters funded by one wallet, liquidity floor, the liquidity map |
+| **flow** | 15 | Same-block bundles, snipers in the first seconds, rotation seeding (sell → equal rebuy), wash volume, fee extraction to bridges and exchanges, insider outflow to exchanges |
+| **social** | 10 | Official account, dev account, trusted voices, promo farms, the Grok read, identity check, recycled accounts, prior coins, team discovery, community takeover, copycats |
+| **project** | 10 | Website, domain age, repo shape, AI-generated code and copy, site builder, claim type, substance |
+
+## The compendium
+
+Every detector is registered with its mechanic, what it reads, and since when. The list grows whenever a new scam shape is learned; each new one arrives with a fixture token that must keep failing it.
+
+<AccordionGroup>
+  <Accordion title="Safety">
+    honeypot · sellability on frontier chains · tax · ownership (mint, pause, blacklist, proxy, hidden owner) · verified source · LP lock · LP migration · explorer scam flag · bytecode signatures · Solana freeze authority · mint authority · transfer fee · mutable metadata · RugCheck risks
+  </Accordion>
+  <Accordion title="Deployer">
+    launch whitelist · pre-deployed exemptions · deployer freshness · funding trail · serial launcher · dev holding · bundle funding (Solana)
+  </Accordion>
+  <Accordion title="Distribution">
+    top-10 · single wallet · contract holders (free-float classification) · smart-account holders · fresh holders · holder clusters · liquidity floor · liquidity map · insiders (Solana)
+  </Accordion>
+  <Accordion title="Flow">
+    same-block bundle · sniper share · rotation seeding · wash volume · fee-wallet extraction · holder outflow to CEX · Solana bundle / snipers / rotation / launch flow
+  </Accordion>
+  <Accordion title="Social">
+    official X · dev X · trusted voices · promo farm · dex paid · Grok read · identity check · recycled account · prior coins · team discovery · notable followers · community takeover · copycat · trust tier 2
+  </Accordion>
+  <Accordion title="Project">
+    website · domain age · repo shape · repo forensics · AI slop · site builder · site copy · X voice · claim type · substance
+  </Accordion>
+</AccordionGroup>
+
+## Data quality
+
+When a public API was rate-limiting during the run, a **data quality** line lists the degraded hosts. Unknowns above it may be transient; re-run later.
