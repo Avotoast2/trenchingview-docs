@@ -59,7 +59,19 @@ The official quoting, reposting or following someone means the project likes the
 
 ## The official account
 
-The project's own account comes from the pair listing or the site. When neither names one, it is inferred from the handles the run met: the account that team bios point at (`building @x` names the project), or a handle or display name matching the token whose bio describes it. An inferred account is marked **inferred** on its row, is used by the downstream checks (X history, notable followers), and is never placed on the team line or among the promoters. A tie with nothing pointing at either stays unresolved: the row reads *none listed · possibly @a @b*.
+The project's own account is resolved from **typed evidence anchored on the contract address**, never from the first link that looks right. Seven channels contribute, cheapest first:
+
+| Channel | What it adds |
+|---|---|
+| Listing | The pair's socials and website, each typed first: an X profile is a candidate, an X post is the launch post (its author a candidate), an X page or a link-page host is neither |
+| Launchpad | What the creator typed at launch — the token's metadata on Solana, the verified contract source on EVM chains (the Pons template bakes X, Telegram and website into the contract) |
+| Chain | The real deployer (through launcher contracts) and its other tokens the desk already resolved |
+| Ledger | Everything the desk has seen about this contract before: earlier reads, every post carrying the address from the X intake and the FOMO feed, listings |
+| Site | The site itself: does it carry the contract, what does it link |
+| X | Who posts the contract and who posted it first, and the bios of the few candidates that matter |
+| GitHub | Does the README carry the contract or link the site |
+
+Each slot resolves to a winner with a tier (see above) and its alternatives. A tie between two supported accounts is reported as a conflict. Posting the contract first is medium evidence on its own — snipers do that too — and becomes decisive only next to a second source. Infrastructure accounts (chains, DEXes, launchpads) are never a project's official, unless the token is that project's own. When nothing reaches the bar the row reads **unknown** with the alternatives, and the downstream checks that need an official (X history, notable followers) do not run on a guess.
 
 ## Promoters
 
