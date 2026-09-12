@@ -40,6 +40,19 @@ The strongest claim an account can make is to put the token's **contract address
 
 The address cuts the other way too. An account met under this token's name whose bio pins a **different** contract raises a **contract mismatch** finding: one of the two tokens is an impostor, and the dossier will not pick a side for you. Pair it with the lookalike finding on the Liquidity panel, which names the older, deeper token this one is named after.
 
+## How sure the dossier is: tiers
+
+Every name on the Project panel carries a tier chip, and hovering it shows the evidence behind the name.
+
+| Tier | Means |
+|---|---|
+| **proven** | Two independent sources tie the account to the contract — for example the listing names it and the verified contract source names it, or the site links the account and the account's bio links the site |
+| **claimed** | One source ties it to the contract: the listing, the creator's launch metadata, or the account's own bio carrying the address |
+| **inferred** | Something points at the account (a site link, a name match, a shared deployer) but nothing ties it to the contract yet |
+| **unknown** | Nothing above the bar. Posting the contract, even first, is not enough on its own — snipers and call channels do that within seconds of a pool |
+
+Two accounts that cannot be separated become a **conflict** finding rather than a coin flip. Team members carry their own tier: **declared** by the project (the official bio, the site's team section, a handle the creator wrote into the contract), **claimed** by the account itself (its bio or its posts), or **inferred** from hard evidence (a GitHub contributor, named as dev by several third parties).
+
 ## Accounts that only interact
 
 The official quoting, reposting or following someone means the project likes them. It does not make them the team. Those accounts appear as a muted **around it** line in the Social section — the signal is kept, without masquerading as membership.
