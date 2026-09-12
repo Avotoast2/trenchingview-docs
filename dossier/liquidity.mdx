@@ -14,8 +14,11 @@ One line with the state and the numbers behind it: how many pools, total liquidi
 | **concentrated** | One pool holds most of the liquidity — the normal healthy shape |
 | **fractured** | The top pool holds less than 60% of the total — exits are split across venues |
 | **thin** | Total liquidity across every pool under $5,000 — an exit trap, RED |
+| **phantom** | The liquidity figure is at least 80% of the FDV (FDV above $100k) — the pool holds the supply itself, valued at its own price. That number is not depth you can sell into, RED |
 
 A price gap above 2% between deep pools (each above $5,000) is flagged YELLOW: the venues disagree on what the token is worth.
+
+A common shape for the phantom case: a fresh token whose only pool is quoted in **another small token** rather than ETH or a stable. The pair reads as `$NEW / OLD`, the liquidity is priced through OLD, and the volume is a few dollars. The **lookalike** finding names OLD in that case (see below).
 
 ## The pools table
 
@@ -34,3 +37,7 @@ Pools under $1,000 are counted as dust — listed, not judged. DexScreener caps 
 ## Quote mix
 
 What the token is paired against, in shares of liquidity: **stable**, **native** (ETH, SOL, BNB), **stock token** (an official tokenized equity on Robinhood chain), or another token. The quote kind also appears as a chip in the header: a pool quoted in a stock token means the token's price moves with the equity.
+
+## Lookalike
+
+Before the social legs run, the dossier searches DexScreener for the token's symbol and the words of its name on the same chain, and for the quote token when the pair is quoted in another small token. An older or deeper token that matches, with socials of its own, is the **original** this one is named after. The finding lists it with its age, liquidity and X link. It is YELLOW when an original exists, and RED when this token is under two days old or its liquidity is phantom while the original has socials — the impostor shape. When the official-X row reads *none found*, it also points at the original's X link so you are not left guessing which token the account you saw belongs to.

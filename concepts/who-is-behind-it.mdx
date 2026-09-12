@@ -34,6 +34,12 @@ A handle that only appears as *someone else's* previous employer or backer is an
 The case that set this rule: a founder whose bio read `building @listedexchange | prev. @PolynomialFi`. The earlier version listed all three handles as team. Now: `@Akhileyyy · builder · prev. @PolynomialFi`, the project's account on its own row, and PolynomialFi nowhere.
 </Note>
 
+## The contract address in a bio
+
+The strongest claim an account can make is to put the token's **contract address** in its bio. The bio parser treats the address like the project's name: `building ZZZ | CA 0x7dbf…` is a team claim, a bare `ZZZ 0x7dbf…` is a plain claim, and `supporter of ZZZ (0x7dbf…)` is a **supporter** — a fan account that pins the contract, listed under *possibly* on the official-X row, never made official and never on the team line.
+
+The address cuts the other way too. An account met under this token's name whose bio pins a **different** contract raises a **contract mismatch** finding: one of the two tokens is an impostor, and the dossier will not pick a side for you. Pair it with the lookalike finding on the Liquidity panel, which names the older, deeper token this one is named after.
+
 ## Accounts that only interact
 
 The official quoting, reposting or following someone means the project likes them. It does not make them the team. Those accounts appear as a muted **around it** line in the Social section — the signal is kept, without masquerading as membership.
