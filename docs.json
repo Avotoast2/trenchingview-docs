@@ -98,5 +98,6 @@
       "source": "/signals/askaura",
       "destination": "/signals/trenchbrain"
     }
-  ]
+  ],
+  "favicon": "/favicon.svg"
 }
