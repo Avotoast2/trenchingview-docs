@@ -50,7 +50,7 @@
             "pages": [
               "signals/videos",
               "signals/stock-token-radar",
-              "signals/askaura"
+              "signals/trenchbrain"
             ]
           },
           {
@@ -92,5 +92,11 @@
     "socials": {
       "website": "https://trenchingview.io"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/signals/askaura",
+      "destination": "/signals/trenchbrain"
+    }
+  ]
 }
