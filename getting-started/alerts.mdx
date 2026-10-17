@@ -1,0 +1,29 @@
+---
+title: "Alerts"
+description: "Link a Telegram chat, choose which pushes reach it — Following, Watchlist, Narratives, Videos — set quiet hours, send a test."
+---
+
+Everything the desk finds lands on the site (Today, the Events feed, your Watchlist). **Alerts** is the push leg: a Telegram chat you link, and the kinds of alert you want in it.
+
+## Link Telegram
+
+Press **Link Telegram**. The bot opens with a one-time code; press **Start** and the chat is bound to your account. For a group, add the bot to the group and send the `/start <code>` line there. A code lives 24 hours and works once; the page notices the link within a few seconds. Several chats can be linked; × unlinks one, and `/alerts off` in the chat does the same from the Telegram side.
+
+## What you receive
+
+| Toggle | Fires when |
+|---|---|
+| **Following** | The table pushes an event from a project you follow — a launch, a listing, a partnership, a token-economics change |
+| **Watchlist** | A re-check finds a change on a token you watch — a worsened finding, a liquidity drop, a lock drained, the top 10 rising, the dev selling |
+| **Narratives** | A narrative turns confirmed or emerging |
+| **Videos** | A video with a thesis or a trade was processed |
+
+All four are on by default. Watchlist alerts are personal: only the chats linked to the account that watches the token receive them.
+
+## Quiet hours
+
+A window in your local time. Alerts inside it are dropped, not queued; the site still shows them. Clear both fields to switch quiet hours off.
+
+## Test
+
+**Send a test alert** pushes one message to every chat linked to your account, ignoring quiet hours, so you can confirm the link.
