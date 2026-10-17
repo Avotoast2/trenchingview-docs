@@ -49,6 +49,7 @@
             "group": "Signals",
             "pages": [
               "signals/following",
+              "signals/narratives",
               "signals/videos",
               "signals/stock-token-radar",
               "signals/trenchbrain"
